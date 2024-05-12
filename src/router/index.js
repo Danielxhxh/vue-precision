@@ -19,5 +19,13 @@ export default createRouter({
       path: "/add-patient",
       component: () => import("../views/AddPatient.vue"),
     },
+    {
+      path: "/modify-patient",
+      component: () => import("../views/ModifyPatient.vue"),
+    },
+    {
+      path: "/delete-patient",
+      component: () => import("../views/DeletePatient.vue"),
+    },
   ],
 });

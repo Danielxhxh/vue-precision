@@ -5,10 +5,10 @@
     <p class="menu-element" @click="goTo('/add-patient')">
       <span class="link">Aggiungi Paziente</span>
     </p>
-    <p class="menu-element">
+    <p class="menu-element" @click="goTo('/delete-patient')">
       <span class="link">Elimina Paziente</span>
     </p>
-    <p class="menu-element">
+    <p class="menu-element" @click="goTo('/modify-patient')">
       <span class="link">Modifica Paziente</span>
     </p>
     <p class="menu-element" @click="goTo('/get-results')">

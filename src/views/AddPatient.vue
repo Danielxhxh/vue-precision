@@ -23,6 +23,9 @@
 
         <button type="submit">Submit</button>
       </form>
+      <div v-if="message">
+        <p :class="message.type">{{ message.message }}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -39,6 +42,8 @@ const id = ref("");
 const BirthDate = ref("");
 const Height = ref("");
 const Weight = ref("");
+
+const message = ref({ message: "", type: "" });
 
 onBeforeMount(async () => {
   const response = await fetch(
@@ -85,17 +90,38 @@ const handleSubmit = () => {
   })
     .then((data) => {
       console.log("Data sent successfully:", data);
-      alert("Data sent successfully!");
+      message.value = {
+        message: "Paziente aggiunto con successo!",
+        type: "success",
+      };
     })
     .catch((error) => {
       console.error("Error sending data:", error);
-      alert("Error sending data!");
+      message.value = {
+        message: "Errore nel aggiungere il paziente!",
+        type: "error",
+      };
     });
+
+  username.value = "";
+  password.value = "";
+  id.value = "";
+  BirthDate.value = "";
+  Height.value = "";
+  Weight.value = "";
 };
 </script>
 
 <style>
 .main-container {
   display: flex;
+}
+
+.error {
+  color: red;
+}
+
+.success {
+  color: green;
 }
 </style>

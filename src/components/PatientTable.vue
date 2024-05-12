@@ -92,7 +92,8 @@ td {
 }
 .table-caption {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 30px;
+  color: green;
   text-align: center;
   margin-bottom: 20px;
 }
