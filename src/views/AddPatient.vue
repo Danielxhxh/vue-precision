@@ -47,7 +47,7 @@ const message = ref({ message: "", type: "" });
 
 onBeforeMount(async () => {
   const response = await fetch(
-    "http://localhost:3000/api/doctor/verify-token",
+    `${import.meta.env.VITE_BACKEND}/api/doctor/verify-token`,
     {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("tokenMedico")}`,
@@ -80,7 +80,7 @@ const handleSubmit = () => {
     },
   };
 
-  fetch("http://localhost:3000/api/patient", {
+  fetch(`${import.meta.env.VITE_BACKEND}/api/patient`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

@@ -34,16 +34,19 @@ const errorMessage = ref("");
 
 const login = async () => {
   try {
-    const response = await fetch("http://localhost:3000/api/doctor/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: new URLSearchParams({
-        username: username.value,
-        password: password.value,
-      }),
-    });
+    const response = await fetch(
+      `${import.meta.env.VITE_BACKEND}/api/doctor/login`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({
+          username: username.value,
+          password: password.value,
+        }),
+      }
+    );
     const data = await response.json();
 
     localStorage.setItem("tokenMedico", data.accessToken);

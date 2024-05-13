@@ -39,7 +39,7 @@ const goTo = (pageName) => {
 };
 
 const patients = ref([]);
-fetch("http://localhost:3000/api/patient/id/all", {
+fetch(`${import.meta.env.VITE_BACKEND}/api/patient/id/all`, {
   headers: {
     Authorization: `Bearer ${localStorage.getItem("tokenMedico")}`,
   },

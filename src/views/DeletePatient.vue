@@ -41,7 +41,7 @@ const message = ref({ message: "", type: "" });
 
 onBeforeMount(async () => {
   const response = await fetch(
-    "http://localhost:3000/api/doctor/verify-token",
+    `${import.meta.env.VITE_BACKEND}/api/doctor/verify-token`,
     {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("tokenMedico")}`,
@@ -59,7 +59,7 @@ onBeforeMount(async () => {
 const fetchPatientData = async () => {
   // Fetch patient data
   const response = await fetch(
-    `http://localhost:3000/api/patient/${patientId.value}`,
+    `${import.meta.env.VITE_BACKEND}/api/patient/${patientId.value}`,
     {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("tokenMedico")}`,
@@ -73,7 +73,7 @@ const fetchPatientData = async () => {
 const deletePatient = async () => {
   try {
     const response = await fetch(
-      `http://localhost:3000/api/patient/${patientId.value}`,
+      `${import.meta.env.VITE_BACKEND}/api/patient/${patientId.value}`,
       {
         method: "DELETE",
         headers: {

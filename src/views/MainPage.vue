@@ -15,7 +15,7 @@ const router = useRouter();
 
 onBeforeMount(async () => {
   const response = await fetch(
-    "http://localhost:3000/api/doctor/verify-token",
+    `${import.meta.env.VITE_BACKEND}/api/doctor/verify-token`,
     {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("tokenMedico")}`,
