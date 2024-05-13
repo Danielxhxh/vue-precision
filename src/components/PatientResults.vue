@@ -9,13 +9,15 @@
         v-for="(result, index) in patientResults"
         :key="index"
       >
-        <li>{{ result }}</li>
+        <Result :result="result" />
       </ul>
     </div>
   </div>
 </template>
 
 <script setup>
+import Result from "./Result.vue";
+
 const props = defineProps({
   patientResults: Object,
 });
