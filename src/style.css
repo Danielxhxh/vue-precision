@@ -4,14 +4,7 @@ body {
   margin: 0;
   padding: 0;
 }
-.container {
-  max-width: 400px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+
 h1 {
   text-align: center;
   color: #000000;
@@ -41,4 +34,25 @@ button {
 }
 button:hover {
   background-color: #45a049;
+}
+
+.main-container {
+  display: flex;
+}
+
+.content-div {
+  margin-left: 290px;
+  width: calc(100% - 290px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.centered-div {
+  padding: 20px;
+  max-width: 80%;
+  width: 100%;
+  box-sizing: border-box;
 }

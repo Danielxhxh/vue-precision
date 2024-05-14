@@ -1,7 +1,11 @@
 <template>
   <div class="main-container">
     <Side_bar_Component />
-    <div>Modify user</div>
+    <div class="content-div">
+      <div class="centered-div">
+        <div>Modify user</div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -30,8 +34,4 @@ onBeforeMount(async () => {
 });
 </script>
 
-<style>
-.main-container {
-  display: flex;
-}
-</style>
+<style></style>

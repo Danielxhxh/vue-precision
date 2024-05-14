@@ -1,28 +1,30 @@
 <template>
   <div class="main-container">
     <Side_bar_Component />
-    <div class="content-container">
-      <div class="patient-div">
-        <label for="patientId">ID del paziente:</label>
-        <form @submit.prevent="fetchPatientData">
-          <input type="number" v-model="patientId" required />
-          <button type="submit">Cerca</button>
-        </form>
-        <div v-if="patient">
-          <PatientData :patientData="patient" />
+    <div class="content-div">
+      <div class="centered-div">
+        <div class="patient-div">
+          <label for="patientId">ID del paziente:</label>
+          <form @submit.prevent="fetchPatientData">
+            <input type="number" v-model="patientId" required />
+            <button type="submit">Cerca</button>
+          </form>
+          <div v-if="patient">
+            <PatientData :patientData="patient" />
+          </div>
+          <div v-else>
+            <p v-if="patientId != ''">
+              Non è stato trovato alcun paziente con questo ID.
+            </p>
+          </div>
         </div>
-        <div v-else>
-          <p v-if="patientId != ''">
-            Non è stato trovato alcun paziente con questo ID.
-          </p>
-        </div>
-      </div>
-      <div class="results-div" v-if="patient">
-        <div v-if="results.length > 0">
-          <PatientResults :patientResults="results" />
-        </div>
-        <div v-else>
-          <p>Non ci sono risultati per questo paziente.</p>
+        <div class="results-div" v-if="patient">
+          <div v-if="results.length > 0">
+            <PatientResults :patientResults="results" />
+          </div>
+          <div v-else>
+            <p>Non ci sono risultati per questo paziente.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -94,15 +96,6 @@ if (route.query.id) {
 </script>
 
 <style scoped>
-.main-container {
-  display: flex;
-}
-
-.content-container {
-  width: 70%;
-  padding: 20px;
-}
-
 .patient-div {
   margin-bottom: 20px;
 }

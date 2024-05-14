@@ -1,30 +1,34 @@
 <template>
   <div class="main-container">
     <Side_bar_Component />
-    <div class="container">
-      <form @submit.prevent="handleSubmit">
-        <label for="username">Username:</label>
-        <input type="text" id="username" v-model="username" required />
+    <div class="content-div">
+      <div class="centered-div">
+        <div class="card">
+          <form @submit.prevent="handleSubmit">
+            <label for="id">ID:</label>
+            <input type="number" id="id" v-model="id" required />
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" v-model="password" required />
+            <label for="username">Username:</label>
+            <input type="text" id="username" v-model="username" required />
 
-        <label for="id">ID:</label>
-        <input type="number" id="id" v-model="id" required />
+            <label for="password">Password:</label>
+            <input type="password" id="password" v-model="password" required />
 
-        <label for="birth-date">BirthDate:</label>
-        <input type="date" id="birth-date" v-model="BirthDate" required />
+            <label for="birth-date">BirthDate:</label>
+            <input type="date" id="birth-date" v-model="BirthDate" required />
 
-        <label for="height">Height:</label>
-        <input type="number" id="height" v-model="Height" required />
+            <label for="height">Height:</label>
+            <input type="number" id="height" v-model="Height" required />
 
-        <label for="weight">Weight:</label>
-        <input type="number" id="weight" v-model="Weight" required />
+            <label for="weight">Weight:</label>
+            <input type="number" id="weight" v-model="Weight" required />
 
-        <button type="submit">Submit</button>
-      </form>
-      <div v-if="message">
-        <p :class="message.type">{{ message.message }}</p>
+            <button type="submit">Submit</button>
+          </form>
+          <div v-if="message">
+            <p :class="message.type">{{ message.message }}</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -113,8 +117,14 @@ const handleSubmit = () => {
 </script>
 
 <style>
-.main-container {
-  display: flex;
+.card {
+  max-width: 400px;
+  max-height: 500px;
+  margin: auto;
+  padding: 30px 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .error {

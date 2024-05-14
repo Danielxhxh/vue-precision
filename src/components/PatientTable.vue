@@ -1,31 +1,29 @@
 <template>
-  <div class="main-content">
-    <div class="patient-table">
-      <table v-if="patients && patients.length">
-        <caption class="table-caption">
-          Lista Pazienti
-        </caption>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Username</th>
-            <th>Password</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr
-            v-for="patient in patients"
-            :key="patient.id"
-            @click="goTo('/get-results?id=' + patient.id)"
-          >
-            <td>{{ patient.id }}</td>
-            <td>{{ patient.username }}</td>
-            <td>{{ patient.password }}</td>
-          </tr>
-        </tbody>
-      </table>
-      <p v-else>Nessun paziente trovato.</p>
-    </div>
+  <div class="patient-table">
+    <table v-if="patients && patients.length">
+      <caption class="table-caption">
+        Lista Pazienti
+      </caption>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Username</th>
+          <th>Password</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          v-for="patient in patients"
+          :key="patient.id"
+          @click="goTo('/get-results?id=' + patient.id)"
+        >
+          <td>{{ patient.id }}</td>
+          <td>{{ patient.username }}</td>
+          <td>{{ patient.password }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <p v-else>Nessun paziente trovato.</p>
   </div>
 </template>
 
@@ -54,14 +52,12 @@ fetch(`${import.meta.env.VITE_BACKEND}/api/patient/id/all`, {
 </script>
 
 <style scoped>
-.patient-table {
+/* .patient-table {
   display: flex;
-}
-.patient-table {
   margin-top: 20px;
   width: 100%;
   overflow-x: auto;
-}
+} */
 
 table {
   margin: 20px;
@@ -70,23 +66,25 @@ table {
 }
 
 th {
-  padding: 10px 160px;
+  padding: 10px;
   text-align: left;
   border-bottom: 1px solid #ddd;
-  font-size: 18px;
+  font-size: 20px;
   background-color: #7fd388;
   color: #fff;
 }
 
 td {
-  padding: 0px 160px;
+  padding: 10px;
   text-align: left;
   border-bottom: 1px solid #ddd;
-  font-size: 15px;
+  font-size: 18px;
 }
+
 .th.table-header {
   font-weight: bold;
 }
+
 .table-cell {
   font-family: Arial, sans-serif;
 }

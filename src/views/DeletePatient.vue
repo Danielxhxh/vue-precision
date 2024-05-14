@@ -1,26 +1,28 @@
 <template>
   <div class="main-container">
     <Side_bar_Component />
-    <div class="content-container">
-      <div class="patient-div">
-        <label for="patientId">Cerca paziente da eliminare tramite ID:</label>
-        <form @submit.prevent="fetchPatientData">
-          <input type="number" v-model="patientId" required />
-          <button type="submit">Cerca</button>
-        </form>
-        <div v-if="message">
-          <p :class="message.type">{{ message.message }}</p>
-        </div>
-        <div v-if="patient">
-          <PatientData :patientData="patient" />
-          <button class="delete-button" @click="deletePatient">
-            Elimina paziente
-          </button>
-        </div>
-        <div v-else>
-          <p v-if="patient != ''">
-            Non è stato trovato alcun paziente con questo ID.
-          </p>
+    <div class="content-div">
+      <div class="centered-div">
+        <div class="patient-div">
+          <label for="patientId">Cerca paziente da eliminare tramite ID:</label>
+          <form @submit.prevent="fetchPatientData">
+            <input type="number" v-model="patientId" required />
+            <button type="submit">Cerca</button>
+          </form>
+          <div v-if="message">
+            <p :class="message.type">{{ message.message }}</p>
+          </div>
+          <div v-if="patient">
+            <PatientData :patientData="patient" />
+            <button class="delete-button" @click="deletePatient">
+              Elimina paziente
+            </button>
+          </div>
+          <div v-else>
+            <p v-if="patient != ''">
+              Non è stato trovato alcun paziente con questo ID.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -111,15 +113,6 @@ const deletePatient = async () => {
 </script>
 
 <style>
-.main-container {
-  display: flex;
-}
-
-.content-container {
-  width: 70%;
-  padding: 20px;
-}
-
 .patient-div {
   margin-bottom: 20px;
 }

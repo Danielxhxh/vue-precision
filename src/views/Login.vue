@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="card">
     <h1>Login</h1>
     <form class="login-form" @submit.prevent="login">
       <input
@@ -58,6 +58,14 @@ const login = async () => {
 </script>
 
 <style scoped>
+.card {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 .error-message {
   color: #ff0000;
   font-size: 14px;

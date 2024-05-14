@@ -1,7 +1,12 @@
 <template>
   <div class="main-container">
     <Side_bar_Component />
-    <PatientTable />
+
+    <div class="content-div">
+      <div class="centered-div">
+        <PatientTable />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -31,8 +36,4 @@ onBeforeMount(async () => {
 });
 </script>
 
-<style>
-.main-container {
-  display: flex;
-}
-</style>
+<style></style>
