@@ -3,8 +3,8 @@
     <table>
       <thead>
         <tr>
-          <th>Attribute</th>
-          <th>Value</th>
+          <th>Parametro</th>
+          <th>Valore</th>
         </tr>
       </thead>
       <tbody>
@@ -51,6 +51,19 @@ onBeforeMount(() => {
 </script>
 
 <style scoped>
+table {
+  width: 100%;
+  margin-bottom: 80px;
+}
+thead:first-child {
+  text-align: left;
+  font-size: 18px;
+  color: green;
+}
+td {
+  width: 50%;
+}
+
 tr:nth-child(even) {
   background-color: #d6eeee;
 }

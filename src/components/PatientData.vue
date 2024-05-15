@@ -7,17 +7,17 @@
       <div class="user-info">
         <div class="user-info-row">
           <p><strong>Username:</strong> {{ patientData.username }}</p>
-          <p><strong>First Name:</strong> {{ patientData["first-name"] }}</p>
-          <p><strong>Last Name:</strong> {{ patientData["last-name"] }}</p>
-          <p><strong>Birth Date:</strong> {{ patientData["birth-date"] }}</p>
+          <p>
+            <strong>Data di nascita:</strong> {{ patientData["birth-date"] }}
+          </p>
         </div>
         <div class="user-info-row">
           <p>
-            <strong>Height:</strong> {{ patientData.height.value }}
+            <strong>Altezza:</strong> {{ patientData.height.value }}
             {{ patientData.height.unit }}
           </p>
           <p>
-            <strong>Weight:</strong> {{ patientData.weight.value }}
+            <strong>Peso:</strong> {{ patientData.weight.value }}
             {{ patientData.weight.unit }}
           </p>
         </div>

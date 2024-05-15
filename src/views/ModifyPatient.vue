@@ -3,7 +3,13 @@
     <Side_bar_Component />
     <div class="content-div">
       <div class="centered-div">
-        <div>Modify user</div>
+        <div>
+          <img
+            src="https://media4.giphy.com/media/Lr4HRF6DEEJo90SQXF/giphy.gif?cid=6c09b9526e66j3fhy070oftr56qjar9rt5jc3akk4hoigq2y&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=s"
+            alt=""
+            style="width: 20%"
+          />
+        </div>
       </div>
     </div>
   </div>

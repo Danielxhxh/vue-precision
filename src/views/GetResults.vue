@@ -6,14 +6,14 @@
         <div class="patient-div">
           <label for="patientId">ID del paziente:</label>
           <form @submit.prevent="fetchPatientData">
-            <input type="number" v-model="patientId" required />
+            <input type="text" v-model="patientId" required />
             <button type="submit">Cerca</button>
           </form>
           <div v-if="patient">
             <PatientData :patientData="patient" />
           </div>
           <div v-else>
-            <p v-if="patientId != ''">
+            <p v-if="patient != ''">
               Non è stato trovato alcun paziente con questo ID.
             </p>
           </div>
@@ -100,7 +100,7 @@ if (route.query.id) {
   margin-bottom: 20px;
 }
 
-input[type="number"] {
+input[type="text"] {
   width: 70%;
 }
 

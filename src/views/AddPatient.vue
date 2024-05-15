@@ -6,7 +6,7 @@
         <div class="card">
           <form @submit.prevent="handleSubmit">
             <label for="id">ID:</label>
-            <input type="number" id="id" v-model="id" required />
+            <input type="text" id="id" v-model="id" required />
 
             <label for="username">Username:</label>
             <input type="text" id="username" v-model="username" required />
@@ -14,16 +14,16 @@
             <label for="password">Password:</label>
             <input type="password" id="password" v-model="password" required />
 
-            <label for="birth-date">BirthDate:</label>
+            <label for="birth-date">Data di nascita:</label>
             <input type="date" id="birth-date" v-model="BirthDate" required />
 
-            <label for="height">Height:</label>
+            <label for="height">Altezza:</label>
             <input type="number" id="height" v-model="Height" required />
 
-            <label for="weight">Weight:</label>
+            <label for="weight">Peso:</label>
             <input type="number" id="weight" v-model="Weight" required />
 
-            <button type="submit">Submit</button>
+            <button type="submit">Invia</button>
           </form>
           <div v-if="message">
             <p :class="message.type">{{ message.message }}</p>

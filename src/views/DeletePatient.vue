@@ -6,7 +6,7 @@
         <div class="patient-div">
           <label for="patientId">Cerca paziente da eliminare tramite ID:</label>
           <form @submit.prevent="fetchPatientData">
-            <input type="number" v-model="patientId" required />
+            <input type="text" v-model="patientId" required />
             <button type="submit">Cerca</button>
           </form>
           <div v-if="message">
@@ -117,7 +117,7 @@ const deletePatient = async () => {
   margin-bottom: 20px;
 }
 
-input[type="number"] {
+input[type="text"] {
   width: 70%;
 }
 
